@@ -1,0 +1,14 @@
+prefix=/d/tmp/libtorch/ffmpeg-4.2.1/_install
+exec_prefix=${prefix}
+libdir=/d/tmp/libtorch/ffmpeg-4.2.1/_install/lib
+includedir=/d/tmp/libtorch/ffmpeg-4.2.1/_install/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 56.31.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil 
+Libs.private: user32.lib bcrypt.lib
+Cflags: -I${includedir}
