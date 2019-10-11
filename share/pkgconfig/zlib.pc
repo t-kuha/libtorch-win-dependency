@@ -1,0 +1,13 @@
+prefix=D:/nn/pytorch/libtorch-win-dependency
+exec_prefix=D:/nn/pytorch/libtorch-win-dependency
+libdir=D:/nn/pytorch/libtorch-win-dependency/lib
+sharedlibdir=D:/nn/pytorch/libtorch-win-dependency/lib
+includedir=D:/nn/pytorch/libtorch-win-dependency/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.11
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
