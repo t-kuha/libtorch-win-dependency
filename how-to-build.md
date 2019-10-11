@@ -131,3 +131,23 @@ $ make install
 ```
 
 - Copy files manually
+
+## zlib
+
+```msdos
+> mkdir _build
+> cd _build
+
+> cmake .. -G"Visual Studio 15 2017" -A x64 -Thost=x64 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency
+> cmake --build . --config Release --target install
+```
+
+## zlib
+
+```msdos
+> mkdir _build
+> cd _build
+
+> cmake .. -G"Visual Studio 15 2017" -A x64 -Thost=x64 -DCMAKE_BUILD_TYPE=Release -DPNG_TESTS=OFF -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency
+> cmake --build . --config Release --target install
+```
