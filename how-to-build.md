@@ -2,13 +2,19 @@
 
 ***
 
+## Set installation destination
+
+```msdos
+> set INSTALL_DEST=<destination of choice>
+```
+
 ## snappy
 
 ```msdos
 > mkdir _build
 > cd _build
 
-> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency
+> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST%
 > cmake --build . --config Release --target install
 ```
 
@@ -18,7 +24,8 @@
 > mkdir _build
 > cd _build
 
-> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependenc -DLEVELDB_BUILD_TESTS=OFF -DLEVELDB_BUILD_BENCHMARKS=OFF
+> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST% ^
+-DLEVELDB_BUILD_TESTS=OFF -DLEVELDB_BUILD_BENCHMARKS=OFF
 > cmake --build . --config Release --target install
 ```
 
@@ -30,7 +37,7 @@ Copy CMakeFiles.txt into lmdb-LMDB_0.9.24\libraries\liblmdb
 > mkdir _build
 > cd _build
 
-> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency
+> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST%
 > cmake --build . --config Release --target install
 ```
 
@@ -40,7 +47,8 @@ Copy CMakeFiles.txt into lmdb-LMDB_0.9.24\libraries\liblmdb
 > mkdir _build
 > cd _build
 
-> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON
+> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST% ^
+-DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON
 > cmake --build . --config Release --target install
 ```
 
@@ -52,7 +60,8 @@ Copy CMakeFiles.txt into lmdb-LMDB_0.9.24\libraries\liblmdb
 > mkdir _build
 > cd _build
 
-> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency -DBUILD_TESTING=OFF -DBUILD_SHARED_LIBS=ON
+> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST% ^
+-DBUILD_TESTING=OFF -DBUILD_SHARED_LIBS=ON
 > cmake --build . --config Release --target install
 ```
 
@@ -61,7 +70,8 @@ Copy CMakeFiles.txt into lmdb-LMDB_0.9.24\libraries\liblmdb
 ```msdos
 > mkdir _build
 > cd _build
-> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency -DBUILD_TESTS=OFF -DWITH_DOCS=OFF
+> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST% ^
+-DBUILD_TESTS=OFF -DWITH_DOCS=OFF
 > cmake --build . --config Release --target install
 ```
 
@@ -70,7 +80,7 @@ Copy CMakeFiles.txt into lmdb-LMDB_0.9.24\libraries\liblmdb
 ```msdos
 > mkdir _build
 > cd _build
-> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency ^
+> cmake .. -Ax64 -Thost=x64 -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST% ^
 -DBUILD_WITH_STATIC_CRT=ON ^
 -DBUILD_TESTS=OFF ^
 -DBUILD_opencv_apps=OFF ^
@@ -138,7 +148,8 @@ $ make install
 > mkdir _build
 > cd _build
 
-> cmake .. -G"Visual Studio 15 2017" -A x64 -Thost=x64 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency
+> cmake .. -G"Visual Studio 15 2017" -A x64 -Thost=x64 ^
+-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST%
 > cmake --build . --config Release --target install
 ```
 
@@ -148,6 +159,20 @@ $ make install
 > mkdir _build
 > cd _build
 
-> cmake .. -G"Visual Studio 15 2017" -A x64 -Thost=x64 -DCMAKE_BUILD_TYPE=Release -DPNG_TESTS=OFF -DCMAKE_INSTALL_PREFIX=D:\nn\pytorch\libtorch-win-dependency
+> cmake .. -G"Visual Studio 15 2017" -A x64 -Thost=x64 ^
+-DCMAKE_BUILD_TYPE=Release -DPNG_TESTS=OFF ^
+-DCMAKE_INSTALL_PREFIX=%INSTALL_DEST%
+> cmake --build . --config Release --target install
+```
+
+## Protobuf
+
+```msdos
+> mkdir _build
+> cd _build
+
+> cmake ..\cmake -G"Visual Studio 15 2017" -A x64 -Thost=x64 ^
+-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%INSTALL_DEST% ^
+-DCMAKE_PREFIX_PATH=D:\nn\pytorch\libtorch-win-dependency -Dprotobuf_BUILD_TESTS=OFF
 > cmake --build . --config Release --target install
 ```
